@@ -153,34 +153,6 @@
 			pinctrl-0 = <&wifi_led_pin>;
 		};
 	};
-
-	usb_pwr_ctrl: usb-pwr-ctrl {
-		compatible = "gpio-leds";
-
-		usb_pwr_a2 {
-			label = "usb_pwr_a2";
-			gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
-		};
-
-		usb_pwr_a3 {
-			label = "usb_pwr_a3";
-			gpios = <&gpio1 RK_PA3 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
-		};
-
-		usb_pwr_a5 {
-			label = "usb_pwr_a5";
-			gpios = <&gpio1 RK_PA5 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
-		};
-
-		usb_pwr_a7 {
-			label = "usb_pwr_a7";
-			gpios = <&gpio1 RK_PA7 GPIO_ACTIVE_HIGH>;
-			default-state = "on";
-		};
-	};
 };
 
 &combphy0 {
@@ -701,16 +673,6 @@
 	sdio-pwrseq {
 		wifi_enable: wifi-enable {
 			rockchip,pins = <3 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
-		};
-	};
-
-	usb-pwr {
-		usb_pwr_pins: usb-pwr-pins {
-		rockchip,pins = 
-			<1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>,
-			<1 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>,
-			<1 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>,
-			<1 RK_PA7 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
 };
